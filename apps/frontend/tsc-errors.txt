@@ -1,0 +1,2 @@
+﻿src/features/clients/ClientDetailPage.tsx(115,31): error TS6133: 'clientId' is declared but its value is never read.
+src/features/clients/ClientDetailPage.tsx(116,9): error TS6133: 'queryClient' is declared but its value is never read.

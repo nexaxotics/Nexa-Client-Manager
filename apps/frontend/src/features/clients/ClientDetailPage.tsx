@@ -100,7 +100,7 @@ export default function ClientDetailPage() {
 
       {/* Tab content */}
       <div className="card">
-        {activeTab === 'profile' && <ProfileTab client={client} clientId={id!} />}
+        {activeTab === 'profile' && <ProfileTab client={client} />}
         {activeTab === 'documents' && <DocumentsTab clientId={id!} />}
         {activeTab === 'status' && <StatusTab client={client} onStageChange={(s) => stageMutation.mutate(s)} />}
         {activeTab === 'updates' && <UpdatesTab clientId={id!} />}
@@ -112,8 +112,7 @@ export default function ClientDetailPage() {
 
 // ------- Tab components -------
 
-function ProfileTab({ client, clientId }: { client: Client; clientId: string }) {
-  const queryClient = useQueryClient()
+function ProfileTab({ client }: { client: Client }) {
   const fields: { label: string; value: string | undefined }[] = [
     { label: 'Business Name', value: client.businessName },
     { label: 'Full Name', value: client.fullName },
